@@ -210,6 +210,10 @@ if __name__ == "__main__":
     image_folder = Image_Folder(directory=directory)
     word_dict = Word_Dict(image_folder, extracted_words_path)
 
+    # create Images folder, if it doesn't exist
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
     print("Welcome to my image extraction tool. Put your images you want to process in the Images folder.")
     print("Depending on the number and size of images, this image processing can take a while.")
     print("If the images were already processed, the program can skip those to achieve faster execution time.")
